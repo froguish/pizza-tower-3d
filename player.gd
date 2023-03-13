@@ -12,7 +12,7 @@ const MAX_SPEED = 40
 var input_dir
 var direction
 
-var mach
+var mach = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -22,6 +22,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var buffer = $buffer
 @onready var Mach2 = $Mach2
 @onready var Mach3 = $Mach3
+@onready var checkWall = $checkWall
 
 func _ready():
 	Input.mouse_mode = 2
@@ -69,11 +70,16 @@ func move(delta):
 	
 	velocity.y -= gravity * delta
 	
-	#if mach == 1:
-	#	velocity.x = clamp(velocity.x, -direction.x * MAX_SPEED, direction.x * MAX_SPEED)
-	#	velocity.z = clamp(velocity.z, -direction.z * MAX_SPEED, direction.z * MAX_SPEED)
-	
 	move_and_slide()
 	
-	print(velocity)
-	
+	#print(velocity)
+	#print(mach)
+
+func wallrun():
+	var multiplier = 1
+	match (mach):
+		2:
+			multiplier = 9
+		3:
+			multiplier = 15
+	velocity.y = SPEED * multiplier

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d2tbsvt5jity4"]
+[gd_scene load_steps=13 format=3 uid="uid://d2tbsvt5jity4"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ci60j"]
 [ext_resource type="Script" path="res://StateMachine.gd" id="2_7cgal"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://Mach1.gd" id="6_tjxxt"]
 [ext_resource type="Script" path="res://Mach2.gd" id="7_p1evq"]
 [ext_resource type="Script" path="res://Mach3.gd" id="8_23eqv"]
+[ext_resource type="Script" path="res://WallRun.gd" id="9_3dvp3"]
+[ext_resource type="Script" path="res://WallJump.gd" id="10_pmtv4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rcdlh"]
 
@@ -21,6 +23,10 @@ shape = SubResource("CapsuleShape3D_rcdlh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_0lfjq")
+
+[node name="checkWall" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.429268, -1.91939)
+target_position = Vector3(0, -2.46, 4.83)
 
 [node name="CameraBase" type="Node3D" parent="."]
 
@@ -39,7 +45,7 @@ one_shot = true
 one_shot = true
 
 [node name="Mach3" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 one_shot = true
 
 [node name="StateMachine" type="Node" parent="."]
@@ -63,3 +69,9 @@ script = ExtResource("7_p1evq")
 
 [node name="Mach3" type="Node" parent="StateMachine"]
 script = ExtResource("8_23eqv")
+
+[node name="WallRun" type="Node" parent="StateMachine"]
+script = ExtResource("9_3dvp3")
+
+[node name="WallJump" type="Node" parent="StateMachine"]
+script = ExtResource("10_pmtv4")

@@ -17,7 +17,7 @@ func physics_update(delta: float) -> void:
 		if !player.buffer.is_stopped():
 			player.velocity.y = player.JUMP_VELOCITY
 			player.buffer.stop()
-		elif player.get_input_direction() == Vector2.ZERO:
+		elif Vector2(player.velocity.x, player.velocity.z) == Vector2.ZERO:
 			state_machine.transition_to("Idle")
 		elif player.mach == 2:
 			state_machine.transition_to("Mach2")
@@ -32,3 +32,6 @@ func physics_update(delta: float) -> void:
 			player.velocity.y = player.JUMP_VELOCITY
 		else:
 			player.buffer.start()
+	elif player.is_on_wall_only() and (player.mach > 0 or wasMach1):
+		wasMach1 = false
+		state_machine.transition_to("WallRun")

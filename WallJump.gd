@@ -1,0 +1,22 @@
+extends PlayerState
+
+func enter(msg := {}) -> void:
+	player.velocity.y = player.JUMP_VELOCITY
+	player.move_and_slide()
+
+func physics_update(delta: float) -> void:
+	player.velocity.x = -player.direction.x * player.SPEED
+	player.velocity.z = -player.direction.z * player.SPEED
+	player.velocity.y -= player.gravity * delta
+	player.move_and_slide()
+	
+	if player.is_on_floor():
+		match (player.mach):
+			0:
+				state_machine.transition_to("Walk")
+			1:
+				state_machine.transition_to("Mach1")
+			2:
+				state_machine.transition_to("Mach2")
+			3:
+				state_machine.transition_to("Mach3")
