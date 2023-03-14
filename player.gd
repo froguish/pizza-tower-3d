@@ -23,6 +23,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var Mach2 = $Mach2
 @onready var Mach3 = $Mach3
 @onready var checkWall = $checkWall
+@onready var dashTimer = $dash
 
 func _ready():
 	Input.mouse_mode = 2
@@ -72,14 +73,18 @@ func move(delta):
 	
 	move_and_slide()
 	
-	#print(velocity)
-	#print(mach)
+	#print(velocity.y)
+	#print(direction)
 
-func wallrun():
+func wallrun(direction):
+	velocity.x = 0
+	velocity.z = 0
 	var multiplier = 1
 	match (mach):
 		2:
 			multiplier = 9
 		3:
 			multiplier = 15
-	velocity.y = SPEED * multiplier
+	velocity.y = SPEED * multiplier * direction
+	
+	move_and_slide()

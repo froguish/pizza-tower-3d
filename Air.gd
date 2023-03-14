@@ -35,3 +35,5 @@ func physics_update(delta: float) -> void:
 	elif player.is_on_wall_only() and (player.mach > 0 or wasMach1):
 		wasMach1 = false
 		state_machine.transition_to("WallRun")
+	elif Input.is_action_pressed("run") and player.checkWall.is_colliding() and (player.velocity.y > -0.33 and player.velocity.y < -0.31):
+		state_machine.transition_to("WallDown")
