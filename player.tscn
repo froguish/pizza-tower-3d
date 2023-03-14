@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d2tbsvt5jity4"]
+[gd_scene load_steps=18 format=3 uid="uid://d2tbsvt5jity4"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ci60j"]
 [ext_resource type="Script" path="res://StateMachine.gd" id="2_7cgal"]
@@ -12,6 +12,9 @@
 [ext_resource type="Script" path="res://WallDown.gd" id="10_1i20r"]
 [ext_resource type="Script" path="res://WallJump.gd" id="10_pmtv4"]
 [ext_resource type="Script" path="res://Dash.gd" id="12_kvqok"]
+[ext_resource type="Script" path="res://SuperJump.gd" id="13_tffwi"]
+[ext_resource type="Script" path="res://Slam.gd" id="14_76rgq"]
+[ext_resource type="Script" path="res://Uppercut.gd" id="15_wye63"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rcdlh"]
 
@@ -87,3 +90,12 @@ script = ExtResource("10_pmtv4")
 
 [node name="Dash" type="Node" parent="StateMachine"]
 script = ExtResource("12_kvqok")
+
+[node name="SuperJump" type="Node" parent="StateMachine"]
+script = ExtResource("13_tffwi")
+
+[node name="Slam" type="Node" parent="StateMachine"]
+script = ExtResource("14_76rgq")
+
+[node name="Uppercut" type="Node" parent="StateMachine"]
+script = ExtResource("15_wye63")

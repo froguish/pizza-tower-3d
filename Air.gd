@@ -1,6 +1,7 @@
 extends PlayerState
 
 var wasMach1 = false
+var doubleJump = false
 
 func enter(msg := {}) -> void:
 	if msg.has("do_jump"):
@@ -14,6 +15,7 @@ func physics_update(delta: float) -> void:
 	player.move(delta)
 	
 	if player.is_on_floor():
+		doubleJump = false
 		if !player.buffer.is_stopped():
 			player.velocity.y = player.JUMP_VELOCITY
 			player.buffer.stop()
@@ -37,3 +39,8 @@ func physics_update(delta: float) -> void:
 		state_machine.transition_to("WallRun")
 	elif Input.is_action_pressed("run") and player.checkWall.is_colliding() and (player.velocity.y > -0.33 and player.velocity.y < -0.31):
 		state_machine.transition_to("WallDown")
+	elif Input.is_action_pressed("slam"):
+		state_machine.transition_to("Slam")
+	elif !doubleJump and Input.is_action_just_pressed("superjump"):
+		doubleJump = true
+		state_machine.transition_to("Uppercut")

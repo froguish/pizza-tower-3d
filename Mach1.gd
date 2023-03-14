@@ -20,3 +20,5 @@ func physics_update(delta: float) -> void:
 		state_machine.transition_to("Idle")
 	elif player.Mach2.is_stopped():
 		state_machine.transition_to("Mach2")
+	elif Input.is_action_just_pressed("dash"):
+		state_machine.transition_to("Dash")
