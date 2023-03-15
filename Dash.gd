@@ -15,8 +15,8 @@ func physics_update(delta: float) -> void:
 		player.coyote.start()
 	
 	if !player.dashTimer.is_stopped():
-		player.velocity.x = direction.x * player.SPEED * 12
-		player.velocity.z = direction.z * player.SPEED * 12
+		player.velocity.x = direction.x * player.SPEED * 8
+		player.velocity.z = direction.z * player.SPEED * 8
 		
 		player.move_and_slide()
 	elif Input.is_action_pressed("run"):

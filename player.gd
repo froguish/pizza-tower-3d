@@ -7,7 +7,8 @@ const JUMP_VELOCITY = 10
 const H_CONTROL_SENS = 4
 const V_CONTROL_SENS = 2
 
-const MAX_SPEED = 40
+const MAX_SPEED = 4
+var maximumSpeed
 
 var input_dir
 var direction
@@ -52,19 +53,46 @@ func get_input_direction():
 func move(delta):
 	var multiplier = 1
 	match (mach):
+		0:
+			maximumSpeed = MAX_SPEED
+			multiplier = SPEED
+		1:
+			maximumSpeed = 30
+			multiplier = 0.3
 		2:
-			multiplier = 9
+			maximumSpeed = 35
+			multiplier = 0.5
 		3:
-			multiplier = 15
+			maximumSpeed = 37
+			multiplier = 0.6
 	input_dir = get_input_direction()
 	direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		if mach == 1:
-			velocity.x += direction.x * 0.3
-			velocity.z += direction.z * 0.3
-		else:
-			velocity.x = direction.x * SPEED * multiplier
-			velocity.z = direction.z * SPEED * multiplier
+		if direction.dot(velocity.normalized()) < 0.1 and direction.dot(velocity.normalized()) > -0.1:
+			match (mach):
+				1:
+					velocity.x = velocity.x * 0.6 + direction.x * 2
+					velocity.z = velocity.z * 0.6 + direction.z * 2
+				2:
+					velocity.x = velocity.x * 0.65 + direction.x * 2
+					velocity.z = velocity.z * 0.65 + direction.z * 2
+				3:
+					velocity.x = velocity.x * 0.7 + direction.x * 2
+					velocity.z = velocity.z * 0.7 + direction.z * 2
+		elif direction.dot(velocity.normalized()) < -0.9:
+			match (mach):
+				1:
+					velocity.x = velocity.x * 0.1 + direction.x * 2
+					velocity.z = velocity.z * 0.1 + direction.z * 2
+				2:
+					velocity.x = velocity.x * 0.3 + direction.x * 2
+					velocity.z = velocity.z * 0.3 + direction.z * 2
+				3:
+					velocity.x = velocity.x * 0.35 + direction.x * 2
+					velocity.z = velocity.z * 0.35 + direction.z * 2
+					mach = 2
+		velocity.x += direction.x * multiplier
+		velocity.z += direction.z * multiplier
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
@@ -73,8 +101,11 @@ func move(delta):
 	
 	move_and_slide()
 	
-	#print(velocity.y)
-	#print(direction)
+	velocity.x = clamp(velocity.x, -(maximumSpeed + abs(direction.x)), (maximumSpeed + abs(direction.z)))
+	velocity.z = clamp(velocity.z, -(maximumSpeed + abs(direction.z)), (maximumSpeed + abs(direction.z)))
+	
+	print(velocity)
+	#print(get_floor_angle())
 
 func wallrun(direction):
 	velocity.x = 0

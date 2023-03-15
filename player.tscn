@@ -21,6 +21,9 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0lfjq"]
 
 [node name="player" type="CharacterBody3D"]
+floor_stop_on_slope = false
+floor_constant_speed = true
+floor_snap_length = 1.0
 script = ExtResource("1_ci60j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
