@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvu2v6j1hv2ti"]
+
+[ext_resource type="PackedScene" uid="uid://0dbk16a26gko" path="res://models/peppino/pizza_tower_peppino.glb" id="1_kqlya"]
+
+[node name="pizza_tower_peppino" instance=ExtResource("1_kqlya")]

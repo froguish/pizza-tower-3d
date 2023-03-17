@@ -1,19 +1,22 @@
 extends CharacterBody3D
 
 
-const SPEED = 4
+const SPEED = 6
 const JUMP_VELOCITY = 10
 
-const H_CONTROL_SENS = 4
+const H_CONTROL_SENS = 2.5
 const V_CONTROL_SENS = 2
 
-const MAX_SPEED = 4
+const MAX_SPEED = SPEED
 var maximumSpeed
 
 var input_dir
 var direction
 
 var mach = 0
+
+var velocityX
+var velocityZ
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -29,26 +32,15 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _ready():
 	Input.mouse_mode = 2
 
-func _input(event):
-	if event is InputEventMouseMotion:
-		camerabase.rotation.x -= deg_to_rad(event.relative.y * 1)
-		camerabase.rotation.x = clamp(camerabase.rotation.x, deg_to_rad(-90), deg_to_rad(90))
-		rotation.y -= deg_to_rad(event.relative.x * 1)
-
 func _physics_process(_delta):
-	if Input.is_action_pressed("look_right"):
-		rotation.y -= deg_to_rad(H_CONTROL_SENS * 1)
-	elif Input.is_action_pressed("look_left"):
-		rotation.y -= deg_to_rad(-H_CONTROL_SENS * 1)
-	elif Input.is_action_pressed("look_up"):
-		camerabase.rotation.x -= deg_to_rad(-V_CONTROL_SENS * 1)
-		camerabase.rotation.x = clamp(camerabase.rotation.x, deg_to_rad(-90), deg_to_rad(90))
-	elif Input.is_action_pressed("look_down"):
-		camerabase.rotation.x -= deg_to_rad(V_CONTROL_SENS * 1)
-		camerabase.rotation.x = clamp(camerabase.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+	var cameraInput = Input.get_vector("look_left", "look_right", "look_up", "look_down", 0.2)
+	
+	rotation.y -= deg_to_rad(cameraInput.x * 2)
+	camerabase.rotation.x -= deg_to_rad(cameraInput.y)
+	camerabase.rotation.x = clamp(camerabase.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 	
 func get_input_direction():
-	return Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	return Input.get_vector("move_left", "move_right", "move_up", "move_down", 0.5)
 
 func move(delta):
 	var multiplier = 1
@@ -63,7 +55,7 @@ func move(delta):
 			maximumSpeed = 35
 			multiplier = 0.5
 		3:
-			maximumSpeed = 37
+			maximumSpeed = 39
 			multiplier = 0.6
 	input_dir = get_input_direction()
 	direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -85,26 +77,26 @@ func move(delta):
 					velocity.x = velocity.x * 0.1 + direction.x * 2
 					velocity.z = velocity.z * 0.1 + direction.z * 2
 				2:
-					velocity.x = velocity.x * 0.3 + direction.x * 2
-					velocity.z = velocity.z * 0.3 + direction.z * 2
+					velocity.x = velocity.x * 0.8 + direction.x
+					velocity.z = velocity.z * 0.8 + direction.z
 				3:
-					velocity.x = velocity.x * 0.35 + direction.x * 2
-					velocity.z = velocity.z * 0.35 + direction.z * 2
+					velocity.x = velocity.x * 0.9 + direction.x
+					velocity.z = velocity.z * 0.9 + direction.z
 					mach = 2
-		velocity.x += direction.x * multiplier
-		velocity.z += direction.z * multiplier
+		velocity.x = move_toward(velocity.x, direction.x * maximumSpeed, multiplier)
+		velocity.z = move_toward(velocity.z, direction.z * maximumSpeed, multiplier)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, 1)
+		velocity.z = move_toward(velocity.z, 0, 1)
 	
 	velocity.y -= gravity * delta
 	
+	velocityX = velocity.x
+	velocityZ = velocity.z
+	
 	move_and_slide()
-	
-	velocity.x = clamp(velocity.x, -(maximumSpeed + abs(direction.x)), (maximumSpeed + abs(direction.z)))
-	velocity.z = clamp(velocity.z, -(maximumSpeed + abs(direction.z)), (maximumSpeed + abs(direction.z)))
-	
-	print(velocity)
+		
+	#print(velocity)
 	#print(get_floor_angle())
 
 func wallrun(direction):
@@ -116,6 +108,9 @@ func wallrun(direction):
 			multiplier = 9
 		3:
 			multiplier = 15
-	velocity.y = SPEED * multiplier * direction
+	if abs(velocityX) > abs(velocityZ):
+		velocity.y = abs(velocityX) * direction
+	else:
+		velocity.y = abs(velocityZ) * direction
 	
 	move_and_slide()
