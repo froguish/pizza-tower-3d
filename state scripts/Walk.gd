@@ -1,6 +1,8 @@
 extends PlayerState
 
 func enter(msg := {}) -> void:
+	player.animation.play("walk")
+	
 	player.mach = 0
 
 func physics_update(delta: float) -> void:
@@ -8,6 +10,10 @@ func physics_update(delta: float) -> void:
 		state_machine.transition_to("Air")
 	else:
 		player.coyote.start()
+
+	if !player.audio.playing:
+		player.audio.stream = load("res://sounds/step.wav")
+		player.audio.play()
 
 	player.move(delta)
 

@@ -1,5 +1,8 @@
 extends PlayerState
 
+func enter(msg := {}) -> void:
+	player.animation.play("idle")
+
 func physics_update(_delta: float) -> void:
 	if not player.is_on_floor():
 		state_machine.transition_to("Air")

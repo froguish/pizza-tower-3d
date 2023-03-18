@@ -4,6 +4,10 @@ var input_dir
 var direction
 
 func enter(msg := {}) -> void:
+	player.audio.stream = load("res://sounds/dash.wav")
+	player.audio.play()
+	player.animation.play("dash", -1, 1)
+	
 	input_dir = player.get_input_direction()
 	direction = (player.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	player.dashTimer.start()

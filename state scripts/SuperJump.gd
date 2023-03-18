@@ -1,10 +1,20 @@
 extends PlayerState
 
+func enter(msg := {}) -> void:
+	player.audio.stop()
+	player.audio.stream = load("res://sounds/chargesuperjump.wav")
+	player.audio.play()
+	player.animation.play("crouch")
+
 func physics_update(delta: float) -> void:
 	if not player.is_on_floor():
 		state_machine.transition_to("Air")
 	else:
 		player.coyote.start()
+		
+	if !player.audio.playing:
+		player.audio.stream = load("res://sounds/superjumploop.wav")
+		player.audio.play()	
 
 	var input_dir = player.get_input_direction()
 	var direction = (player.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -20,5 +30,8 @@ func physics_update(delta: float) -> void:
 	player.move_and_slide()
 
 	if Input.is_action_just_released("superjump"):
+		player.audio.stop()
+		player.audio.stream = load("res://sounds/superjumprelease.wav")
+		player.audio.play()	
 		player.velocity.y = 50
-		state_machine.transition_to("Air")
+		state_machine.transition_to("Air", {superJump = true})

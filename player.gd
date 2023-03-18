@@ -28,6 +28,9 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var Mach3 = $Mach3
 @onready var checkWall = $checkWall
 @onready var dashTimer = $dash
+@onready var animation = get_node("peppino full/AnimPlayer")
+@onready var model = $"peppino full"
+@onready var audio = $sfx
 
 func _ready():
 	Input.mouse_mode = 2
