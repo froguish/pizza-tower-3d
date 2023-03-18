@@ -1,9 +1,8 @@
 2a60927148abd1d33b818b535e306557
-::res://::1679179274
+::res://::1679180758
 icon.svg::CompressedTexture2D::4607535000920772784::1679178770::1679178909::1::::<><>::
 level.gltf::PackedScene::6715395401025091266::1679179273::1679179295::1::::<><>::uid://bm52dts552lw5
 README.md::TextFile::-1::1679178770::0::1::::<><>::
-level.tscn::PackedScene::7618778525918018905::1679179258::0::1::::<><>::uid://diy0nagboj6x4
 ::res://models/::1679179231
 ::res://models/peppino full/::1679178909
 peppino full.glb::PackedScene::4950103209874513574::1679178770::1679178909::1::::<><>::uid://sd3li5gbyjao<>uid://dkjeqpq0t1yka<>uid://dc0ewx7yobw1g<>uid://c02e7d1utwlyg<>uid://pbj7jnmph0na<>uid://6ktxt5vvsme<>uid://fu5ubair45gs
@@ -17,9 +16,9 @@ peppino full_White.png::CompressedTexture2D::7880002141649157972::1679178770::16
 ::res://music/::1679178909
 john gutter song.mp3::AudioStreamMP3::7249222582730698156::1679178770::1679178908::1::::<><>::
 pizza time.mp3::AudioStreamMP3::7690218219886444995::1679178770::1679178908::1::::<><>::
-::res://scenes/::1679179236
-player.tscn::PackedScene::8087622522486360677::1679179235::0::1::::<><>::res://scripts/player.gd<>res://state scripts/StateMachine.gd<>res://state scripts/Idle.gd<>res://state scripts/Air.gd<>res://state scripts/Walk.gd<>res://state scripts/Mach1.gd<>res://state scripts/Mach2.gd<>res://state scripts/Mach3.gd<>uid://sd3li5gbyjao<>res://state scripts/WallRun.gd<>res://state scripts/WallDown.gd<>uid://dkjeqpq0t1yka<>res://state scripts/WallJump.gd<>uid://dc0ewx7yobw1g<>uid://c02e7d1utwlyg<>res://state scripts/Dash.gd<>uid://pbj7jnmph0na<>res://state scripts/SuperJump.gd<>uid://6ktxt5vvsme<>res://state scripts/Slam.gd<>res://state scripts/Uppercut.gd<>uid://fu5ubair45gs<>uid://bkx5w05yhqx65
-world.tscn::PackedScene::3326561310484843726::1679179036::0::1::::<><>::uid://diy0nagboj6x4<>uid://dbjtvwfkaetjo<>uid://dnhx7xkcoyk0l
+::res://scenes/::1679180730
+player.tscn::PackedScene::8087622522486360677::1679180704::0::1::::<><>::res://scripts/player.gd<>res://state scripts/StateMachine.gd<>res://state scripts/Idle.gd<>res://state scripts/Air.gd<>res://state scripts/Walk.gd<>res://state scripts/Mach1.gd<>res://state scripts/Mach2.gd<>res://state scripts/Mach3.gd<>uid://sd3li5gbyjao<>res://state scripts/WallRun.gd<>res://state scripts/WallDown.gd<>uid://dkjeqpq0t1yka<>res://state scripts/WallJump.gd<>uid://dc0ewx7yobw1g<>uid://c02e7d1utwlyg<>res://state scripts/Dash.gd<>uid://pbj7jnmph0na<>res://state scripts/SuperJump.gd<>uid://6ktxt5vvsme<>res://state scripts/Slam.gd<>res://state scripts/Uppercut.gd<>uid://fu5ubair45gs<>uid://bkx5w05yhqx65
+world.tscn::PackedScene::3326561310484843726::1679180730::0::1::::<><>::uid://diy0nagboj6x4<>uid://dbjtvwfkaetjo<>uid://dnhx7xkcoyk0l
 ::res://scripts/::1679178949
 player.gd::GDScript::-1::1679178770::0::1::::<>CharacterBody3D<>::
 ::res://sounds/::1679178909
@@ -55,7 +54,7 @@ Walk.gd::GDScript::-1::1679178771::0::1::::<>PlayerState<>::
 WallDown.gd::GDScript::-1::1679178771::0::1::::<>PlayerState<>::
 WallJump.gd::GDScript::-1::1679178771::0::1::::<>PlayerState<>::
 WallRun.gd::GDScript::-1::1679178771::0::1::::<>PlayerState<>::
-::res://textures/::1679179273
+::res://textures/::1679179295
 texture_07.png::CompressedTexture2D::5647571665502698275::1679178771::1679178909::1::::<><>::
 tiled.tres::StandardMaterial3D::7771859015754283119::1679178771::0::1::::<><>::uid://cmpyxek8qutax
 _albedo.png::CompressedTexture2D::3292263883312051886::1679179273::1679179295::1::::<><>::

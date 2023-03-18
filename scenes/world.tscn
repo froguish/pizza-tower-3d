@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bnnn8jppto0qk"]
 
-[ext_resource type="PackedScene" uid="uid://dgsuf0un6q4n2" path="res://level.tscn" id="1_ne8tt"]
+[ext_resource type="Material" uid="uid://diy0nagboj6x4" path="res://textures/tiled.tres" id="3_jcywd"]
 [ext_resource type="AudioStream" uid="uid://dbjtvwfkaetjo" path="res://music/john gutter song.mp3" id="3_pkeuf"]
 [ext_resource type="PackedScene" uid="uid://dnhx7xkcoyk0l" path="res://scenes/player.tscn" id="3_xpknv"]
 
@@ -22,12 +22,87 @@ environment = SubResource("Environment_jbppi")
 transform = Transform3D(1, 0, 0, 0, -0.0156898, 0.999877, 0, -0.999877, -0.0156898, 0, 2.40246, 0)
 shadow_enabled = true
 
-[node name="CSGCombiner3D" parent="." instance=ExtResource("1_ne8tt")]
-
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_pkeuf")
 volume_db = -11.244
 autoplay = true
 
 [node name="player" parent="." instance=ExtResource("3_xpknv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.27239, 0)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 2.27239, 0)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.8876, 22.4768)
+size = Vector3(8.90981, 1, 215.37)
+material = ExtResource("3_jcywd")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.5528, 36.9009)
+size = Vector3(8.91, 20.6403, 1)
+material = ExtResource("3_jcywd")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.8316, 104.649)
+size = Vector3(8.91, 63.1448, 1)
+material = ExtResource("3_jcywd")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.977)
+size = Vector3(8.90981, 1, 50.1914)
+material = ExtResource("3_jcywd")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.59159, 25.5419)
+size = Vector3(8.91, 16.6455, 1)
+material = ExtResource("3_jcywd")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D/CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.82052, 7.83873)
+size = Vector3(8.91, 1, 16.4334)
+material = ExtResource("3_jcywd")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D/CSGBox3D3/CSGBox3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19.0617, 7.72132)
+size = Vector3(8.91, 38.1841, 1)
+material = ExtResource("3_jcywd")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D/CSGBox3D3/CSGBox3D4/CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.6738, 9.42765)
+size = Vector3(8.91, 1, 21.7656)
+material = ExtResource("3_jcywd")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D/CSGBox3D3/CSGBox3D4/CSGBox3D3/CSGBox3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.39817, 11.2362)
+size = Vector3(8.91, 34.138, 1)
+material = ExtResource("3_jcywd")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D/CSGBox3D3/CSGBox3D4/CSGBox3D3/CSGBox3D4/CSGBox3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.9252, 11.1177)
+size = Vector3(8.91, 1, 46.8004)
+material = ExtResource("3_jcywd")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D/CSGBox3D3/CSGBox3D4/CSGBox3D3/CSGBox3D4/CSGBox3D4/CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.94103, 23.0955)
+size = Vector3(8.91, 9.09342, 1)
+material = ExtResource("3_jcywd")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D/CSGBox3D3/CSGBox3D4/CSGBox3D3/CSGBox3D4/CSGBox3D4/CSGBox3D3/CSGBox3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.69611, 4.97105)
+size = Vector3(8.91, 1, 14.5645)
+material = ExtResource("3_jcywd")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D/CSGBox3D3/CSGBox3D4/CSGBox3D3/CSGBox3D4/CSGBox3D4/CSGBox3D3/CSGBox3D5/CSGBox3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.1894, 6.77294)
+size = Vector3(8.91, 36.036, 1)
+material = ExtResource("3_jcywd")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08248, 100.081)
+size = Vector3(4.021, 1, 4.85198)
+material = ExtResource("3_jcywd")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -28.2377, 135.418)
+size = Vector3(8.91, 1, 37.998)
