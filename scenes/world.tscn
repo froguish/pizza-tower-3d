@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://bnnn8jppto0qk"]
+
+[ext_resource type="Material" uid="uid://diy0nagboj6x4" path="res://textures/tiled.tres" id="2_8eohe"]
+[ext_resource type="AudioStream" uid="uid://dbjtvwfkaetjo" path="res://music/john gutter song.mp3" id="3_pkeuf"]
+[ext_resource type="PackedScene" uid="uid://dnhx7xkcoyk0l" path="res://scenes/player.tscn" id="3_xpknv"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_2xku8"]
+
+[sub_resource type="Sky" id="Sky_j5wnl"]
+sky_material = SubResource("PhysicalSkyMaterial_2xku8")
+
+[sub_resource type="Environment" id="Environment_jbppi"]
+background_mode = 2
+sky = SubResource("Sky_j5wnl")
+
+[node name="world" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jbppi")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0156898, 0.999877, 0, -0.999877, -0.0156898, 0, 2.40246, 0)
+shadow_enabled = true
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+size = Vector3(8.90981, 1, 10.3461)
+material = ExtResource("2_8eohe")
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_pkeuf")
+volume_db = -11.244
+autoplay = true
+
+[node name="player" parent="." instance=ExtResource("3_xpknv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.27239, 0)

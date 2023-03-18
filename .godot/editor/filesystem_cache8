@@ -1,0 +1,77 @@
+2a60927148abd1d33b818b535e306557
+::res://::1679178944
+icon.svg::CompressedTexture2D::4607535000920772784::1679178770::1679178909::1::::<><>::
+player.gd::GDScript::-1::1679178770::0::1::::<>CharacterBody3D<>::
+README.md::TextFile::-1::1679178770::0::1::::<><>::
+::res://models/::1679178770
+::res://models/peppino/::1679178910
+pizza_tower_peppino.glb::PackedScene::1760994212678151778::1679178770::1679178910::1::::<><>::uid://bmsfdidb5m5ls<>uid://dwgcpaodhheyj<>uid://b3l7llsjykohv<>uid://d31kwaslgmisx<>uid://bc7uq04tjvmuj<>uid://c2h3hgyd2nbmd<>uid://csutghnaoyog0
+pizza_tower_peppinoModel.tscn::PackedScene::6289773142661401874::1679178770::0::1::::<><>::uid://0dbk16a26gko
+pizza_tower_peppino_0.png::CompressedTexture2D::3266154974175359264::1679178770::1679178909::1::::<><>::
+pizza_tower_peppino_1.png::CompressedTexture2D::8715951120307683665::1679178770::1679178909::1::::<><>::
+pizza_tower_peppino_2.png::CompressedTexture2D::4376379654358877483::1679178770::1679178909::1::::<><>::
+pizza_tower_peppino_3.png::CompressedTexture2D::9178869980258105147::1679178770::1679178909::1::::<><>::
+pizza_tower_peppino_4.png::CompressedTexture2D::2594102730416107961::1679178770::1679178909::1::::<><>::
+pizza_tower_peppino_5.png::CompressedTexture2D::6684103718634596887::1679178770::1679178909::1::::<><>::
+pizza_tower_peppino_6.png::CompressedTexture2D::6078692833343549565::1679178770::1679178909::1::::<><>::
+::res://models/peppino full/::1679178909
+peppino full.glb::PackedScene::4950103209874513574::1679178770::1679178909::1::::<><>::uid://sd3li5gbyjao<>uid://dkjeqpq0t1yka<>uid://dc0ewx7yobw1g<>uid://c02e7d1utwlyg<>uid://pbj7jnmph0na<>uid://6ktxt5vvsme<>uid://fu5ubair45gs
+peppino full_Black.png::CompressedTexture2D::1271312505083013314::1679178770::1679178909::1::::<><>::
+peppino full_Head.png::CompressedTexture2D::394089051843175246::1679178770::1679178909::1::::<><>::
+peppino full_Mouth.png::CompressedTexture2D::6583600869742590530::1679178770::1679178909::1::::<><>::
+peppino full_Peppino Eye.png::CompressedTexture2D::1055501124022583686::1679178770::1679178909::1::::<><>::
+peppino full_shirt.png::CompressedTexture2D::64638049168020316::1679178770::1679178909::1::::<><>::
+peppino full_skin.png::CompressedTexture2D::7351532596223855034::1679178770::1679178909::1::::<><>::
+peppino full_White.png::CompressedTexture2D::7880002141649157972::1679178770::1679178909::1::::<><>::
+::res://models/peppino walk/::1679178910
+walk.glb::PackedScene::2830154909123938550::1679178770::1679178910::1::::<><>::uid://bbxje51mysb36<>uid://ddn777e5bp0lh<>uid://hds6g00gaxwn<>uid://8ep8efpelooe<>uid://bt2j67ndgh6mj<>uid://c66ekwynsvwnj<>uid://b68enyw71p6d
+walk_Black.png::CompressedTexture2D::2504645428228451947::1679178770::1679178909::1::::<><>::
+walk_Head.png::CompressedTexture2D::136196078873038573::1679178770::1679178909::1::::<><>::
+walk_Mouth.png::CompressedTexture2D::2325459255666414672::1679178770::1679178909::1::::<><>::
+walk_Peppino Eye.png::CompressedTexture2D::3776350425695577941::1679178770::1679178909::1::::<><>::
+walk_shirt.png::CompressedTexture2D::7012953149655748867::1679178770::1679178909::1::::<><>::
+walk_skin.png::CompressedTexture2D::498663659113396373::1679178770::1679178909::1::::<><>::
+walk_White.png::CompressedTexture2D::7398667270261101097::1679178770::1679178909::1::::<><>::
+::res://music/::1679178909
+john gutter song.mp3::AudioStreamMP3::7249222582730698156::1679178770::1679178908::1::::<><>::
+pizza time.mp3::AudioStreamMP3::7690218219886444995::1679178770::1679178908::1::::<><>::
+::res://scenes/::1679178935
+player.tscn::PackedScene::7009244163566855206::1679178949::0::1::::<><>::res://player.gd<>res://state scripts/StateMachine.gd<>res://state scripts/Idle.gd<>res://state scripts/Air.gd<>res://state scripts/Walk.gd<>res://state scripts/Mach1.gd<>res://state scripts/Mach2.gd<>res://state scripts/Mach3.gd<>uid://sd3li5gbyjao<>res://state scripts/WallRun.gd<>res://state scripts/WallDown.gd<>uid://dkjeqpq0t1yka<>res://state scripts/WallJump.gd<>uid://dc0ewx7yobw1g<>uid://c02e7d1utwlyg<>res://state scripts/Dash.gd<>uid://pbj7jnmph0na<>res://state scripts/SuperJump.gd<>uid://6ktxt5vvsme<>res://state scripts/Slam.gd<>res://state scripts/Uppercut.gd<>uid://fu5ubair45gs<>uid://bkx5w05yhqx65
+world.tscn::PackedScene::3326561310484843726::1679178935::0::1::::<><>::uid://diy0nagboj6x4<>uid://dbjtvwfkaetjo
+::res://scripts/::1679178944
+::res://sounds/::1679178909
+chargesuperjump.wav::AudioStreamWAV::6377641491190259530::1679178771::1679178909::1::::<><>::
+dash.wav::AudioStreamWAV::3137651966194048520::1679178771::1679178909::1::::<><>::
+groundpound end.wav::AudioStreamWAV::7692476258172307831::1679178771::1679178909::1::::<><>::
+groundpound start.wav::AudioStreamWAV::3158043128116173396::1679178771::1679178909::1::::<><>::
+jump.wav::AudioStreamWAV::713279219307149730::1679178771::1679178909::1::::<><>::
+mach1.wav::AudioStreamWAV::365423494901884169::1679178771::1679178909::1::::<><>::
+mach2.wav::AudioStreamWAV::8035713159859994002::1679178771::1679178909::1::::<><>::
+mach3.wav::AudioStreamWAV::6935884379638313903::1679178771::1679178909::1::::<><>::
+step.wav::AudioStreamWAV::3401757831710783324::1679178771::1679178909::1::::<><>::
+superjumploop.wav::AudioStreamWAV::3041162373737870533::1679178771::1679178909::1::::<><>::
+superjumpRelease.wav::AudioStreamWAV::7803844619986374909::1679178771::1679178909::1::::<><>::
+uppercut.wav::AudioStreamWAV::3348478548569012144::1679178771::1679178909::1::::<><>::
+::res://sounds/sfx_data/::1679178771
+::res://sounds/sfx_data/e08/::1679178771
+::res://sounds/sfx_data/e08/d08/::1679178771
+::res://state scripts/::1679178771
+Air.gd::GDScript::-1::1679178771::0::1::::<>PlayerState<>::
+Dash.gd::GDScript::-1::1679178771::0::1::::<>PlayerState<>::
+Idle.gd::GDScript::-1::1679178771::0::1::::<>PlayerState<>::
+Mach1.gd::GDScript::-1::1679178771::0::1::::<>PlayerState<>::
+Mach2.gd::GDScript::-1::1679178771::0::1::::<>PlayerState<>::
+Mach3.gd::GDScript::-1::1679178771::0::1::::<>PlayerState<>::
+PlayerState.gd::GDScript::-1::1679178771::0::1::::PlayerState<>State<>::
+Slam.gd::GDScript::-1::1679178771::0::1::::<>PlayerState<>::
+State.gd::GDScript::-1::1679178771::0::1::::State<>Node<>::
+StateMachine.gd::GDScript::-1::1679178771::0::1::::StateMachine<>Node<>::
+SuperJump.gd::GDScript::-1::1679178771::0::1::::<>PlayerState<>::
+Uppercut.gd::GDScript::-1::1679178771::0::1::::<>PlayerState<>::
+Walk.gd::GDScript::-1::1679178771::0::1::::<>PlayerState<>::
+WallDown.gd::GDScript::-1::1679178771::0::1::::<>PlayerState<>::
+WallJump.gd::GDScript::-1::1679178771::0::1::::<>PlayerState<>::
+WallRun.gd::GDScript::-1::1679178771::0::1::::<>PlayerState<>::
+::res://textures/::1679178909
+texture_07.png::CompressedTexture2D::5647571665502698275::1679178771::1679178909::1::::<><>::
+tiled.tres::StandardMaterial3D::7771859015754283119::1679178771::0::1::::<><>::uid://cmpyxek8qutax
