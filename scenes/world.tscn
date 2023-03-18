@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bnnn8jppto0qk"]
 
-[ext_resource type="Material" uid="uid://diy0nagboj6x4" path="res://textures/tiled.tres" id="2_8eohe"]
+[ext_resource type="PackedScene" uid="uid://dgsuf0un6q4n2" path="res://level.tscn" id="1_ne8tt"]
 [ext_resource type="AudioStream" uid="uid://dbjtvwfkaetjo" path="res://music/john gutter song.mp3" id="3_pkeuf"]
 [ext_resource type="PackedScene" uid="uid://dnhx7xkcoyk0l" path="res://scenes/player.tscn" id="3_xpknv"]
 
@@ -22,12 +22,7 @@ environment = SubResource("Environment_jbppi")
 transform = Transform3D(1, 0, 0, 0, -0.0156898, 0.999877, 0, -0.999877, -0.0156898, 0, 2.40246, 0)
 shadow_enabled = true
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
-use_collision = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-size = Vector3(8.90981, 1, 10.3461)
-material = ExtResource("2_8eohe")
+[node name="CSGCombiner3D" parent="." instance=ExtResource("1_ne8tt")]
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_pkeuf")

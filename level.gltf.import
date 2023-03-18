@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bgk7ic77f6dt3"
-path="res://.godot/imported/walk.glb-bbc5ae4888cdd77044042ae6f9ea185b.scn"
+uid="uid://c2w8t01qbgfha"
+path="res://.godot/imported/level.gltf-76ed3e1c60d11eae7ed5369cdb09ffca.scn"
 
 [deps]
 
-source_file="res://models/peppino walk/walk.glb"
-dest_files=["res://.godot/imported/walk.glb-bbc5ae4888cdd77044042ae6f9ea185b.scn"]
+source_file="res://level.gltf"
+dest_files=["res://.godot/imported/level.gltf-76ed3e1c60d11eae7ed5369cdb09ffca.scn"]
 
 [params]
 
@@ -24,7 +24,7 @@ meshes/light_baking=1
 meshes/lightmap_texel_size=0.2
 skins/use_named_skins=true
 animation/import=true
-animation/fps=60.0
+animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""

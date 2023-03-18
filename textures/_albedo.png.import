@@ -2,18 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b68enyw71p6d"
-path.s3tc="res://.godot/imported/walk_Head.png-8e5f2a047dc167f96ad0756fe46baa8f.s3tc.ctex"
+uid="uid://bm52dts552lw5"
+path.s3tc="res://.godot/imported/_albedo.png-45f04221ebc5a0cfe4abeaf160be1435.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 
-source_file="res://models/peppino walk/walk_Head.png"
-dest_files=["res://.godot/imported/walk_Head.png-8e5f2a047dc167f96ad0756fe46baa8f.s3tc.ctex"]
+source_file="res://textures/_albedo.png"
+dest_files=["res://.godot/imported/_albedo.png-45f04221ebc5a0cfe4abeaf160be1435.s3tc.ctex"]
 
 [params]
 
