@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bk81rkk0yypuq"
+path="res://.godot/imported/groundpound start.wav-8240be55c9ce5f6c1dad09fce5337672.sample"
+
+[deps]
+
+source_file="res://sounds/groundpound start.wav"
+dest_files=["res://.godot/imported/groundpound start.wav-8240be55c9ce5f6c1dad09fce5337672.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

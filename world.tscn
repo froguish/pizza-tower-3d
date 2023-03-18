@@ -1,88 +1,38 @@
-[gd_scene load_steps=9 format=3 uid="uid://onrphi3uu4tn"]
+[gd_scene load_steps=7 format=3 uid="uid://cw87ttetetne2"]
 
-[ext_resource type="PackedScene" uid="uid://bfirve76w6037" path="res://player.tscn" id="1_17k2h"]
+[ext_resource type="PackedScene" uid="uid://c64lhy1hjti5c" path="res://player.tscn" id="1_rkt5c"]
+[ext_resource type="Material" uid="uid://diy0nagboj6x4" path="res://textures/tiled.tres" id="2_8eohe"]
+[ext_resource type="AudioStream" uid="uid://dbjtvwfkaetjo" path="res://music/john gutter song.mp3" id="3_pkeuf"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_07lpl"]
-size = Vector3(706.565, 0.401, 33.977)
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_2xku8"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_3go0c"]
+[sub_resource type="Sky" id="Sky_j5wnl"]
+sky_material = SubResource("PhysicalSkyMaterial_2xku8")
 
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_mu1g4"]
-
-[sub_resource type="Sky" id="Sky_w8xdc"]
-sky_material = SubResource("PhysicalSkyMaterial_mu1g4")
-
-[sub_resource type="Environment" id="Environment_fhw3u"]
+[sub_resource type="Environment" id="Environment_jbppi"]
 background_mode = 2
-sky = SubResource("Sky_w8xdc")
-
-[sub_resource type="BoxMesh" id="BoxMesh_0pnbd"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_n1cip"]
-size = Vector3(141.03, 0.556, 3.623)
+sky = SubResource("Sky_j5wnl")
 
 [node name="world" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45947, 3.05176e-05, 0.534119)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_07lpl")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(706.565, 0, 0, 0, 0.401, 0, 0, 0, 33.977, 0, 0, 0)
-mesh = SubResource("BoxMesh_3go0c")
-
-[node name="player" parent="." instance=ExtResource("1_17k2h")]
-transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 3, 0.565)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_fhw3u")
+environment = SubResource("Environment_jbppi")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.0764583, 0.997073, 0, -0.997073, 0.0764583, 0, 7.14161, 1.11674)
+transform = Transform3D(1, 0, 0, 0, -0.0156898, 0.999877, 0, -0.999877, -0.0156898, 0, 2.40246, 0)
 shadow_enabled = true
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.91816, 1.58813, 0)
+[node name="player" parent="." instance=ExtResource("1_rkt5c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4774, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
-transform = Transform3D(-6.15657e-06, 0.556, 0, -140.846, -2.43035e-08, 0, 0, 0, 3.623, 0, 0, 0)
-mesh = SubResource("BoxMesh_0pnbd")
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_n1cip")
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+size = Vector3(8.90981, 1, 10.3461)
+material = ExtResource("2_8eohe")
 
-[node name="StaticBody3D5" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.115, 1.58813, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D5"]
-transform = Transform3D(-6.15657e-06, 0.556, 0, -140.846, -2.43035e-08, 0, 0, 0, 3.623, 0, 0, 0)
-mesh = SubResource("BoxMesh_0pnbd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_n1cip")
-
-[node name="StaticBody3D4" type="StaticBody3D" parent="."]
-transform = Transform3D(0.357097, -0.934067, 0, 0.934067, 0.357097, 0, 0, 0, 1, -45.7268, 1.58813, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D4"]
-transform = Transform3D(-6.15657e-06, 0.556, 0, -140.846, -2.43035e-08, 0, 0, 0, 3.623, 0, 0, 0)
-mesh = SubResource("BoxMesh_0pnbd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_n1cip")
-
-[node name="StaticBody3D3" type="StaticBody3D" parent="."]
-transform = Transform3D(-0.0256011, -0.999672, 0, 0.999672, -0.0256011, 0, 0, 0, 1, -78.1763, 69.4017, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D3"]
-transform = Transform3D(-6.19888e-06, 0.556, 0, -140.846, -2.42144e-08, 0, 0, 0, 3.623, 0, 0, 0)
-mesh = SubResource("BoxMesh_0pnbd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0.485, 0)
-shape = SubResource("BoxShape3D_n1cip")
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_pkeuf")
+volume_db = -11.244
+autoplay = true

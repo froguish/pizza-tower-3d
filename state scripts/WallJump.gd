@@ -3,6 +3,7 @@ extends PlayerState
 var goingDown = -1
 
 func enter(msg := {}) -> void:
+	player.animation.play("jump")
 	if msg.has("goingDown"):
 		goingDown = 1
 	else:
