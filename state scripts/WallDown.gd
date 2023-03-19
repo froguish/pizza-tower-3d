@@ -36,7 +36,7 @@ func physics_update(delta: float) -> void:
 	
 	var input_dir = player.get_input_direction()
 	var direction = (player.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	player.wallrun(-1)
+	player.wallrun(-1, delta)
 	
 	if player.is_on_floor():
 		player.model.rotation.x = 0

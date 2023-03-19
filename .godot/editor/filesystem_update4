@@ -1,15 +1,8 @@
-res://scenes/player.tscn
+res://scenes/menu.tscn
+res://scripts/menu.gd
+res://scripts/lose.gd
+res://scripts/win.gd
+res://state scripts/PlayerState.gd
+res://scenes/free.tscn
 res://textures/tiled.tres
-res://textures/wall.tres
-res://textures/sideWall.tres
-res://scenes/world.tscn
-res://state scripts/Mach2.gd
-res://state scripts/WallJump.gd
-res://state scripts/WallRun.gd
-res://state scripts/WallDown.gd
-res://state scripts/Air.gd
-res://state scripts/Mach1.gd
-res://state scripts/Mach3.gd
-res://scripts/player.gd
-res://state scripts/Idle.gd
-res://state scripts/StateMachine.gd
+res://scripts/world.gd

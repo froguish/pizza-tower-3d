@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://nxfaqfyy1a7n"]
+
+[ext_resource type="PackedScene" uid="uid://dnhx7xkcoyk0l" path="res://scenes/player.tscn" id="1_6k23e"]
+[ext_resource type="Material" uid="uid://diy0nagboj6x4" path="res://textures/tiled.tres" id="2_godq2"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_uboao"]
+
+[sub_resource type="Sky" id="Sky_d1qjy"]
+sky_material = SubResource("PhysicalSkyMaterial_uboao")
+
+[sub_resource type="Environment" id="Environment_f0aqw"]
+background_mode = 2
+sky = SubResource("Sky_d1qjy")
+
+[node name="world" type="Node3D"]
+
+[node name="player" parent="." instance=ExtResource("1_6k23e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.58766, 0)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+size = Vector3(27.7447, 1, 38.5817)
+material = ExtResource("2_godq2")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_f0aqw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.113273, 0.993564, 0, -0.993564, -0.113273, 0, 8.50407, -2.90226)
+shadow_enabled = true

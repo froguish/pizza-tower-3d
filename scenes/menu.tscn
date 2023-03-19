@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwn4l1uxyr3k0"]
+
+[ext_resource type="Texture2D" uid="uid://ovh2sts3hlbq" path="res://textures/Pizza_Tower_logo.png" id="1_bkpvo"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_dqnvo"]
+[ext_resource type="AudioStream" uid="uid://77pq0g3oqsy1" path="res://music/menu.mp3" id="3_krupe"]
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dqnvo")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+offset_left = -27.0
+offset_top = -36.0
+offset_right = 575.0
+offset_bottom = 322.0
+size_flags_horizontal = 4
+size_flags_vertical = 2
+color = Color(0.784314, 0.760784, 0.992157, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 300.0
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_bkpvo")
+stretch_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.87
+anchor_right = 0.5
+anchor_bottom = 0.87
+offset_left = -88.5
+offset_top = -58.0
+offset_right = 88.5
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "play"
+
+[node name="Button2" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "free mode"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_krupe")
+volume_db = -14.991
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer2/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Button2" to="." method="_on_button_2_pressed"]

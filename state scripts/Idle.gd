@@ -1,6 +1,7 @@
 extends PlayerState
 
 func enter(msg := {}) -> void:
+	player.audio.stop()
 	player.animation.play("idle")
 
 func physics_update(_delta: float) -> void:

@@ -1,5 +1,6 @@
-[gd_scene load_steps=105 format=3 uid="uid://bnnn8jppto0qk"]
+[gd_scene load_steps=112 format=3 uid="uid://cgs7d3indum2g"]
 
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_vlkci"]
 [ext_resource type="Material" uid="uid://diy0nagboj6x4" path="res://textures/tiled.tres" id="3_ax6do"]
 [ext_resource type="Texture2D" uid="uid://cmpyxek8qutax" path="res://textures/texture_07.png" id="3_dtybf"]
 [ext_resource type="AudioStream" uid="uid://dbjtvwfkaetjo" path="res://music/john gutter song.mp3" id="3_pkeuf"]
@@ -17,7 +18,6 @@ sky_material = SubResource("PhysicalSkyMaterial_2xku8")
 background_mode = 2
 background_energy_multiplier = 2.42
 sky = SubResource("Sky_j5wnl")
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.0383
 volumetric_fog_albedo = Color(0, 0, 0, 1)
 volumetric_fog_emission = Color(0.486275, 0.552941, 0.831373, 1)
@@ -922,7 +922,35 @@ shadow_mesh = SubResource("ArrayMesh_hqqdm")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8ynj8"]
 data = PackedVector3Array(-160.417, -1.28526, 47.8656, -160.417, 1.28526, -47.8656, -160.417, 1.28526, 47.8656, -160.417, -1.28526, 47.8656, -160.417, -1.28526, -47.8656, -160.417, 1.28526, -47.8656, -160.417, -1.28526, -47.8656, 160.417, 1.28526, -47.8656, -160.417, 1.28526, -47.8656, -160.417, -1.28526, -47.8656, 160.417, -1.28526, -47.8656, 160.417, 1.28526, -47.8656, 160.417, -1.28526, -47.8656, 160.417, 1.28526, 47.8656, 160.417, 1.28526, -47.8656, 160.417, -1.28526, -47.8656, 160.417, -1.28526, 47.8656, 160.417, 1.28526, 47.8656, 160.417, -1.28526, 47.8656, -160.417, 1.28526, 47.8656, 160.417, 1.28526, 47.8656, 160.417, -1.28526, 47.8656, -160.417, -1.28526, 47.8656, -160.417, 1.28526, 47.8656, -160.417, -1.28526, -47.8656, 160.417, -1.28526, 47.8656, 160.417, -1.28526, -47.8656, -160.417, -1.28526, -47.8656, -160.417, -1.28526, 47.8656, 160.417, -1.28526, 47.8656, 160.417, 1.28526, -47.8656, -160.417, 1.28526, 47.8656, -160.417, 1.28526, -47.8656, 160.417, 1.28526, -47.8656, 160.417, 1.28526, 47.8656, -160.417, 1.28526, 47.8656)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wp45a"]
+height = 17.7049
+radius = 5.18245
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ltw42"]
+albedo_color = Color(0.658824, 0.47451, 0.964706, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rqegd"]
+material = SubResource("StandardMaterial3D_ltw42")
+top_radius = 5.182
+bottom_radius = 5.182
+height = 17.705
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8bh51"]
+radius = 1.956
+height = 4.00397
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aacxp"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_la2lf"]
+material = SubResource("StandardMaterial3D_aacxp")
+radius = 1.087
+height = 3.391
+radial_segments = 132
+rings = 1
+
 [node name="world" type="Node3D"]
+script = ExtResource("1_vlkci")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jbppi")
@@ -936,6 +964,7 @@ shadow_enabled = true
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_pkeuf")
 volume_db = -11.244
+autoplay = true
 
 [node name="player" parent="." instance=ExtResource("3_xpknv")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.6123, 0)
@@ -1191,6 +1220,7 @@ shape = SubResource("ConcavePolygonShape3D_316nx")
 
 [node name="cube23" type="MeshInstance3D" parent="level1"]
 transform = Transform3D(0, 1, 0, 0, 0, -1.10497, -1.36701, 0, 0, 13.7483, 18.6047, 166.124)
+material_override = ExtResource("6_ykla4")
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_pk04d")
 skeleton = NodePath("")
@@ -1224,3 +1254,44 @@ surface_material_override/0 = ExtResource("6_ykla4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level1/cube25/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_8ynj8")
+
+[node name="Pillar John" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 44.3129, 318.785)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar John"]
+shape = SubResource("CylinderShape3D_wp45a")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pillar John"]
+mesh = SubResource("CylinderMesh_rqegd")
+skeleton = NodePath("")
+
+[node name="exit" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.28033, 0)
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="exit"]
+shape = SubResource("CapsuleShape3D_8bh51")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="exit"]
+mesh = SubResource("CapsuleMesh_la2lf")
+
+[node name="pizzaTime" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+
+[node name="time" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -79.0
+offset_top = -35.0
+offset_right = 79.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 10
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Pillar John" to="." method="_on_pillar_john_body_entered"]
+[connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
