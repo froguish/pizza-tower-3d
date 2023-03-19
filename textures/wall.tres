@@ -1,0 +1,9 @@
+[gd_resource type="ORMMaterial3D" load_steps=3 format=3 uid="uid://d2fmjqyjvw3lu"]
+
+[ext_resource type="Texture2D" uid="uid://cmpyxek8qutax" path="res://textures/texture_07.png" id="1_ikkby"]
+[ext_resource type="Texture2D" uid="uid://bnoxys2j4u8eh" path="res://textures/texture_13.png" id="2_da3vl"]
+
+[resource]
+albedo_texture = ExtResource("1_ikkby")
+orm_texture = ExtResource("2_da3vl")
+uv1_triplanar = true

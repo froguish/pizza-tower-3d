@@ -27,6 +27,7 @@ func physics_update(delta: float) -> void:
 	elif player.is_on_wall() and (player.get_floor_angle() < 1.3 and player.get_floor_angle() > 0):
 		state_machine.transition_to("WallRun")
 	elif Vector2(player.velocity.x, player.velocity.z) == Vector2.ZERO:
+		print("true", Vector2(player.velocity.x, player.velocity.z))
 		player.audio.stop()
 		state_machine.transition_to("Idle")
 	elif player.Mach3.is_stopped() and (abs(player.velocity.x) > 34 or abs(player.velocity.z) > 34):

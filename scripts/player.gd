@@ -99,7 +99,7 @@ func move(delta):
 	
 	move_and_slide()
 		
-	#print(velocity)
+	print(velocity, direction)
 	#print(get_floor_angle())
 
 func wallrun(direction):
