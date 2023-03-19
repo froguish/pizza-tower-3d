@@ -2,6 +2,8 @@ extends PlayerState
 
 func enter(msg := {}) -> void:
 	match (player.mach):
+		0:
+			player.animation.play("run")
 		1:
 			player.animation.play("run")
 		2:
@@ -9,8 +11,8 @@ func enter(msg := {}) -> void:
 		3:
 			player.animation.play("run", -1, 3)
 	
-	#player.position.x = player.checkWall.get_collider().position.x + 0.5
-	#player.position.z = player.checkWall.get_collider().position.z + 0.5
+	#player.position.x = player.position.x + 0.7 * (player.direction.x / player.direction.x) * -1
+	#player.position.z = player.position.z + 0.7 * (player.direction.z / player.direction.z) * -1
 	
 	player.model.rotation.x += deg_to_rad(90)
 
@@ -19,6 +21,9 @@ func physics_update(delta: float) -> void:
 	
 	if !player.audio.playing:
 		match (player.mach):
+			0:
+				player.audio.stream = load("res://sounds/mach1.wav")
+				player.audio.play()
 			1:
 				player.audio.stream = load("res://sounds/mach1.wav")
 				player.audio.play()
@@ -42,7 +47,7 @@ func physics_update(delta: float) -> void:
 		player.velocity.z = player.velocityZ
 		match (player.mach):
 			0:
-				state_machine.transition_to("Walk")
+				state_machine.transition_to("Mach1")
 			1:
 				state_machine.transition_to("Mach1")
 			2:
@@ -58,6 +63,8 @@ func physics_update(delta: float) -> void:
 		player.model.rotation.x = 0
 		player.Camera.rotation.x = 0
 		
+		player.animation.play("fall")
+		player.audio.stop()
 		player.velocity = Vector3.ZERO
 		player.mach = 0
 		state_machine.transition_to("Air")
@@ -65,6 +72,8 @@ func physics_update(delta: float) -> void:
 		player.model.rotation.x = 0
 		player.Camera.rotation.x = 0
 		
+		player.animation.play("fall")
+		player.audio.stop()
 		player.velocity = Vector3.ZERO
 		player.mach = 0
 		state_machine.transition_to("Air")

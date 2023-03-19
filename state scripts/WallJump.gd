@@ -3,6 +3,9 @@ extends PlayerState
 var goingDown = -1
 
 func enter(msg := {}) -> void:
+	player.audio.stop()
+	player.audio.stream = load("res://sounds/jump.wav")
+	player.audio.play()
 	player.animation.play("jump")
 	if msg.has("goingDown"):
 		goingDown = 1
@@ -20,7 +23,10 @@ func physics_update(delta: float) -> void:
 	if player.is_on_floor():
 		match (player.mach):
 			0:
-				state_machine.transition_to("Walk")
+				if Input.is_action_pressed("run"):
+					state_machine.transition_to("Mach1")
+				else:
+					state_machine.transition_to("Walk")
 			1:
 				state_machine.transition_to("Mach1")
 			2:

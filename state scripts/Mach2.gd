@@ -9,11 +9,12 @@ func enter(msg := {}) -> void:
 
 func physics_update(delta: float) -> void:
 	if not player.is_on_floor():
+		player.audio.stop()
 		state_machine.transition_to("Air")
 	else:
 		player.coyote.start()
 		
-	if !player.audio.playing:
+	if !player.audio.playing and player.is_on_floor():
 		player.audio.stream = load("res://sounds/mach2.wav")
 		player.audio.play()	
 	

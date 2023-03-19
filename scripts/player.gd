@@ -35,7 +35,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var Camera = $Camera
 
 func _ready():
-	Input.mouse_mode = 2
+	#Input.mouse_mode = 2
+	pass
 
 func _physics_process(_delta):
 	var cameraInput = Input.get_vector("look_left", "look_right", "look_up", "look_down", 0.2)
@@ -101,7 +102,7 @@ func move(delta):
 	
 	move_and_slide()
 		
-	#print(velocity, direction)
+	#print(velocity)
 	#print(get_floor_angle())
 
 func wallrun(direction):

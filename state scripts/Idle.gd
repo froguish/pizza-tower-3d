@@ -14,7 +14,7 @@ func physics_update(_delta: float) -> void:
 
 	if Input.is_action_just_pressed("jump"):
 		state_machine.transition_to("Air", {do_jump = true})
+	elif Input.is_action_pressed("run") and player.get_input_direction() != Vector2.ZERO:
+		state_machine.transition_to("Mach1")
 	elif player.get_input_direction() != Vector2.ZERO:
 		state_machine.transition_to("Walk")
-	elif Input.is_action_just_pressed("run"):
-		state_machine.transition_to("Mach1")

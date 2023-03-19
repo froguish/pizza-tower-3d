@@ -15,6 +15,18 @@ run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
+[debug]
+
+shapes/collision/shape_color=Color(0, 0.6, 0.701961, 0.419608)
+
+[display]
+
+window/size/viewport_width=512
+window/size/viewport_height=300
+window/size/window_width_override=1024
+window/size/window_height_override=600
+window/stretch/mode="viewport"
+
 [input]
 
 move_left={
@@ -87,9 +99,3 @@ dash={
 
 3d/default_gravity=15.0
 2d/default_gravity=1.0
-
-[rendering]
-
-anti_aliasing/quality/msaa_2d=1
-anti_aliasing/quality/msaa_3d=1
-anti_aliasing/quality/screen_space_aa=1

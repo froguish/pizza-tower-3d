@@ -1,10 +1,17 @@
 extends PlayerState
 
+var wasMach1 = false
+
 func enter(msg := {}) -> void:
+	wasMach1 = false
+	
 	if msg.has("superJump"):
 		player.animation.play("fall")
-	elif player.velocity.y < 0:
+	elif player.velocity.y < -0.76:
 		player.animation.play("fall")
+	elif player.mach == 1:
+		wasMach1 = true
+		player.mach = 0
 	elif player.mach == 2:
 		player.animation.play("run", -1, 2)
 	elif player.mach == 3:
@@ -31,6 +38,8 @@ func physics_update(delta: float) -> void:
 					player.audio.stream = load("res://sounds/mach3.wav")
 					player.audio.play()
 	
+	var canWallDown = Input.is_action_pressed("run") and player.checkWall.is_colliding() and (player.velocity.y < 0) and player.velocity.y > -1
+	
 	player.move(delta)
 	
 	if player.is_on_floor():
@@ -52,9 +61,10 @@ func physics_update(delta: float) -> void:
 			player.velocity.y = player.JUMP_VELOCITY
 		else:
 			player.buffer.start()
-	elif player.is_on_wall_only() and (player.mach > 0 or Input.is_action_pressed("run")) and player.upWall.is_colliding():
+	elif player.is_on_wall_only() and (player.mach > 0 or wasMach1) and player.upWall.is_colliding():
+		wasMach1 = false
 		state_machine.transition_to("WallRun")
-	elif Input.is_action_pressed("run") and player.checkWall.is_colliding() and player.velocity.y == -0.75:
+	elif canWallDown:
 		state_machine.transition_to("WallDown")
 	elif Input.is_action_pressed("slam"):
 		state_machine.transition_to("Slam")

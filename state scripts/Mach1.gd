@@ -11,11 +11,13 @@ func enter(msg := {}) -> void:
 
 func physics_update(delta: float) -> void:
 	if not player.is_on_floor():
+		player.audio.stop()
+		player.animation.play("fall")
 		state_machine.transition_to("Air")
 	else:
 		player.coyote.start()
 	
-	if !player.audio.playing:
+	if !player.audio.playing and player.is_on_floor():
 		player.audio.stream = load("res://sounds/mach1.wav")
 		player.audio.play()
 
@@ -24,7 +26,6 @@ func physics_update(delta: float) -> void:
 	player.move(delta)
 
 	if Input.is_action_just_pressed("jump"):
-		player.mach = 0
 		player.audio.stop()
 		state_machine.transition_to("Air", {do_jump = true})
 	elif !Input.is_action_pressed("run"):
@@ -32,7 +33,7 @@ func physics_update(delta: float) -> void:
 		state_machine.transition_to("Walk")
 	elif player.is_on_wall() and (player.get_floor_angle() < 1.3 and player.get_floor_angle() > 0):
 		state_machine.transition_to("WallRun", {PlayervelocityX = velocityX, PlayervelocityZ = velocityZ})
-	elif Vector2(player.velocity.x, player.velocity.z) == Vector2.ZERO and !Input.is_action_pressed("run"):
+	elif player.get_input_direction() == Vector2.ZERO:
 		player.audio.stop()
 		state_machine.transition_to("Idle")
 	elif (abs(player.velocity.x) > 29 or abs(player.velocity.z) > 29):

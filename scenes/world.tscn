@@ -938,7 +938,7 @@ stream = ExtResource("3_pkeuf")
 volume_db = -11.244
 
 [node name="player" parent="." instance=ExtResource("3_xpknv")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 2.27239, 0)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.6123, 0)
 
 [node name="level1" type="Node3D" parent="."]
 
@@ -1214,7 +1214,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_f6pj0")
 shape = SubResource("ConcavePolygonShape3D_4wn7b")
 
 [node name="cube25" type="MeshInstance3D" parent="level1"]
-transform = Transform3D(0, 1, 0, 0, 0, -1.10497, -1.36701, 0, 0, -14.3319, 18.6047, 166.124)
+transform = Transform3D(0, 1, 0, 0, 0, -1.10497, -1.36701, 0, 0, -12.4585, 21.8382, 165.445)
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_1iumx")
 skeleton = NodePath("")
