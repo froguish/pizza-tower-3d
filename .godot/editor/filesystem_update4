@@ -1,9 +1,1 @@
 res://scenes/menu.tscn
-res://textures/tiled.tres
-res://textures/wall.tres
-res://textures/sideWall.tres
-res://scenes/free.tscn
-res://scenes/world.tscn
-res://scenes/player.tscn
-res://state scripts/Idle.gd
-res://scenes/free.gd
