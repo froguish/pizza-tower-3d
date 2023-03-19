@@ -1,7 +1,8 @@
 extends PlayerState
 
 func enter(msg := {}) -> void:
-	player.audio.stop()
+	if player.audio.stream != load("res://sounds/groundpound end.wav"):
+		player.audio.stop()
 	player.animation.play("idle")
 
 func physics_update(_delta: float) -> void:
