@@ -25,6 +25,11 @@ func physics_update(delta: float) -> void:
 		player.velocity.x = move_toward(player.velocity.x, 0, player.SPEED)
 		player.velocity.z = move_toward(player.velocity.z, 0, player.SPEED)
 	
+	var multiplier = 1
+	
+	if player.mach == 3:
+		multiplier = 1.2
+	
 	player.velocity.y -= player.gravity * delta
 	
 	player.move_and_slide()
@@ -33,5 +38,5 @@ func physics_update(delta: float) -> void:
 		player.audio.stop()
 		player.audio.stream = load("res://sounds/superjumprelease.wav")
 		player.audio.play()	
-		player.velocity.y = 50
+		player.velocity.y = 50 * multiplier
 		state_machine.transition_to("Air", {superJump = true})

@@ -15,6 +15,10 @@ run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Win="*res://scenes/win.tscn"
+
 [debug]
 
 shapes/collision/shape_color=Color(0, 0.6, 0.701961, 0.419608)

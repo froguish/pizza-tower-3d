@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/win.gd" id="1_kou60"]
 
 [node name="win" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,7 +40,12 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "you win!!!!"
+text = "you win!!!!!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "f"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 1

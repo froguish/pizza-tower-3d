@@ -1,1 +1,10 @@
 res://scenes/menu.tscn
+res://textures/tiled.tres
+res://textures/wall.tres
+res://textures/sideWall.tres
+res://scripts/world.gd
+res://scenes/world.tscn
+res://scenes/win.tscn
+res://scripts/win.gd
+res://state scripts/SuperJump.gd
+res://state scripts/StateMachine.gd
