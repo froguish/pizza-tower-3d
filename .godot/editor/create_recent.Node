@@ -1,7 +1,10 @@
+MeshInstance3D
+CollisionShape3D
+StaticBody3D
+AudioStreamPlayer
 Button
 Label
 VBoxContainer
-AudioStreamPlayer
 DirectionalLight3D
 WorldEnvironment
 CSGBox3D
@@ -9,10 +12,7 @@ CSGCombiner3D
 ColorRect
 TextureRect
 Timer
-MeshInstance3D
-CollisionShape3D
 Area3D
-StaticBody3D
 Marker3D
 SpringArm3D
 RayCast3D

@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwn4l1uxyr3k0"]
+[gd_scene load_steps=4 format=3 uid="uid://ckvydetefejr2"]
 
 [ext_resource type="Texture2D" uid="uid://ovh2sts3hlbq" path="res://textures/Pizza_Tower_logo.png" id="1_bkpvo"]
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_dqnvo"]
-[ext_resource type="AudioStream" uid="uid://77pq0g3oqsy1" path="res://music/menu.mp3" id="3_krupe"]
+[ext_resource type="AudioStream" uid="uid://ccu3vpxaqvwv0" path="res://music/menu.mp3" id="3_paq58"]
 
 [node name="menu" type="Control"]
 layout_mode = 3
@@ -59,7 +59,7 @@ layout_mode = 2
 text = "free mode"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_krupe")
+stream = ExtResource("3_paq58")
 volume_db = -14.991
 autoplay = true
 

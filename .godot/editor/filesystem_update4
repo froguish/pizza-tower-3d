@@ -1,8 +1,6 @@
 res://scenes/menu.tscn
-res://scripts/menu.gd
-res://scripts/lose.gd
-res://scripts/win.gd
-res://state scripts/PlayerState.gd
-res://scenes/free.tscn
 res://textures/tiled.tres
-res://scripts/world.gd
+res://scenes/free.tscn
+res://textures/wall.tres
+res://textures/sideWall.tres
+res://scenes/world.tscn
