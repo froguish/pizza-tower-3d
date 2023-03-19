@@ -24,7 +24,7 @@ func physics_update(delta: float) -> void:
 	var direction = (player.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	player.wallrun(1)
 	
-	if !player.is_on_wall():
+	if !player.upWall.is_colliding():
 		player.model.rotation.x = 0
 		player.camerabase.rotation.x = 0
 		

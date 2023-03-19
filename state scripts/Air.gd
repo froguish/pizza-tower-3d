@@ -35,15 +35,15 @@ func physics_update(delta: float) -> void:
 	
 	if player.is_on_floor():
 		if !player.buffer.is_stopped():
-			player.velocity.y = player.JUMP_VELOCITY
 			player.buffer.stop()
+			state_machine.transition_to("Air", {do_jump = true})
 		elif Vector2(player.velocity.x, player.velocity.z) == Vector2.ZERO:
 			state_machine.transition_to("Idle")
 		elif player.mach == 2:
 			state_machine.transition_to("Mach2")
 		elif player.mach == 3:
 			state_machine.transition_to("Mach3")
-		elif player.mach == 1:
+		elif Input.is_action_pressed("run"):
 			state_machine.transition_to("Mach1")
 		else:
 			state_machine.transition_to("Walk")
@@ -52,7 +52,7 @@ func physics_update(delta: float) -> void:
 			player.velocity.y = player.JUMP_VELOCITY
 		else:
 			player.buffer.start()
-	elif player.is_on_wall_only() and (player.mach > 0):
+	elif player.is_on_wall_only() and (player.mach > 0 or Input.is_action_pressed("run")) and player.upWall.is_colliding():
 		state_machine.transition_to("WallRun")
 	elif Input.is_action_pressed("run") and player.checkWall.is_colliding() and player.velocity.y == -0.75:
 		state_machine.transition_to("WallDown")

@@ -21,16 +21,18 @@ var velocityZ
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-@onready var camerabase = $CameraBase
 @onready var coyote = $coyote
 @onready var buffer = $buffer
 @onready var Mach2 = $Mach2
 @onready var Mach3 = $Mach3
 @onready var checkWall = $checkWall
+@onready var upWall = $upWall
 @onready var dashTimer = $dash
 @onready var animation = get_node("peppino full/AnimPlayer")
 @onready var model = $"peppino full"
 @onready var audio = $sfx
+@onready var camerabase = get_node("Camera/CameraBase")
+@onready var Camera = $Camera
 
 func _ready():
 	Input.mouse_mode = 2
@@ -39,8 +41,8 @@ func _physics_process(_delta):
 	var cameraInput = Input.get_vector("look_left", "look_right", "look_up", "look_down", 0.2)
 	
 	rotation.y -= deg_to_rad(cameraInput.x * 2)
-	camerabase.rotation.x -= deg_to_rad(cameraInput.y)
-	camerabase.rotation.x = clamp(camerabase.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+	camerabase.rotation.x -= deg_to_rad(cameraInput.y * 1.5)
+	camerabase.rotation.x = clamp(camerabase.rotation.x, deg_to_rad(-60), deg_to_rad(60))
 	
 func get_input_direction():
 	return Input.get_vector("move_left", "move_right", "move_up", "move_down", 0.5)
@@ -99,18 +101,12 @@ func move(delta):
 	
 	move_and_slide()
 		
-	print(velocity, direction)
+	#print(velocity, direction)
 	#print(get_floor_angle())
 
 func wallrun(direction):
 	velocity.x = 0
 	velocity.z = 0
-	var multiplier = 1
-	match (mach):
-		2:
-			multiplier = 9
-		3:
-			multiplier = 15
 	if abs(velocityX) > abs(velocityZ):
 		velocity.y = abs(velocityX) * direction
 	else:

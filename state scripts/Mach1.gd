@@ -24,6 +24,7 @@ func physics_update(delta: float) -> void:
 	player.move(delta)
 
 	if Input.is_action_just_pressed("jump"):
+		player.mach = 0
 		player.audio.stop()
 		state_machine.transition_to("Air", {do_jump = true})
 	elif !Input.is_action_pressed("run"):

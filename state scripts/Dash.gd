@@ -14,13 +14,14 @@ func enter(msg := {}) -> void:
 
 func physics_update(delta: float) -> void:
 	if not player.is_on_floor():
+		player.animation.play("fall")
 		state_machine.transition_to("Air")
 	else:
 		player.coyote.start()
 	
 	if !player.dashTimer.is_stopped():
-		player.velocity.x = direction.x * player.SPEED * 8
-		player.velocity.z = direction.z * player.SPEED * 8
+		player.velocity.x = direction.x * player.SPEED * 4
+		player.velocity.z = direction.z * player.SPEED * 4
 		
 		player.move_and_slide()
 	elif Input.is_action_pressed("run"):
