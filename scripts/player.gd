@@ -105,15 +105,15 @@ func move(delta):
 	#print(velocity)
 	#print(get_floor_angle())
 
-func wallrun(direction, delta):
+func wallrun(dir, delta):
 	velocity.x = 0
 	velocity.z = 0
 	if abs(velocityX) > abs(velocityZ):
-		velocity.y = abs(velocityX) * direction
+		velocity.y = abs(velocityX) * dir
 	else:
-		velocity.y = abs(velocityZ) * direction
+		velocity.y = abs(velocityZ) * dir
 	
-	if direction == -1:
+	if dir == -1:
 		velocity.y -= gravity
 	
 	move_and_slide()

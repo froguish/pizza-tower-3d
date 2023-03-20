@@ -32,6 +32,6 @@ func _on_pillar_john_body_entered(body):
 
 func _on_exit_body_entered(body):
 	if pizzaTimed and !pizzaTime.is_stopped():
-		Win.label.set_text("completed in " + str(15 - pizzaTime.time_left).pad_decimals(3) + " seconds")
+		Win.label.set_text("completed in " + str(30 - pizzaTime.time_left).pad_decimals(3) + " seconds")
 		get_node("/root/Win").show()
 		get_tree().change_scene_to_file("res://scenes/win.tscn")

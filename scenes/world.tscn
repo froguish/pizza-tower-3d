@@ -1271,7 +1271,7 @@ shape = SubResource("CapsuleShape3D_8bh51")
 mesh = SubResource("CapsuleMesh_la2lf")
 
 [node name="pizzaTime" type="Timer" parent="."]
-wait_time = 15.0
+wait_time = 30.0
 one_shot = true
 
 [node name="time" type="Label" parent="."]

@@ -1,6 +1,10 @@
 res://scenes/menu.tscn
+res://scripts/world.gd
 res://scenes/world.tscn
 res://textures/tiled.tres
 res://textures/wall.tres
 res://textures/sideWall.tres
-res://scenes/free.tscn
+res://scenes/player.tscn
+res://state scripts/Uppercut.gd
+res://scripts/player.gd
+res://state scripts/Mach2.gd
