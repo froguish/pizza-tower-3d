@@ -1,6 +1,6 @@
 # pizza-tower-3d
 
-Quick demo I made for a 3D Pizza Tower!
+Quick UNOFFICIAL demo I made for a 3D Pizza Tower!
 
 Based off my [YouTube video](https://youtu.be/sH6C811xkGk)
 
