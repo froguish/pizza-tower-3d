@@ -1,0 +1,9 @@
+res://scenes/free.tscn::ae549a4c8c620425466ba73f7055779b::1680030282::res://.godot/exported/133200997/export-4448649630cbd243ecf7558dc6ee4b0d-free.scn
+res://scenes/lose.tscn::03007cd56c51a59044e11c44ea5c2238::1679258655::res://.godot/exported/133200997/export-efc2149ab720599002ee64c5ecd89a61-lose.scn
+res://scenes/menu.tscn::10bfc1c5ff465222c350306068817134::1680030384::res://.godot/exported/133200997/export-1ce5c86e8ca186dcaaeaa8726f1268db-menu.scn
+res://scenes/player.tscn::8cc33a529ca8052179a9450f92dab042::1679335708::res://.godot/exported/133200997/export-234fb6894ec6226e856ab7f825500d3d-player.scn
+res://scenes/win.tscn::d646510c0310b8c4e08d64ab3134d861::1679267290::res://.godot/exported/133200997/export-e41299e7d84cfbe18855bcc85300cd13-win.scn
+res://scenes/world.tscn::e5be868d334e763deba927a49464dd76::1679335605::res://.godot/exported/133200997/export-6b9c1b1fd6ae6f795188dfdc89e222b0-world.scn
+res://textures/sideWall.tres::7660b593f2b1b7349c6f77292b49c935::1680030207::res://.godot/exported/133200997/export-68850a364e6b0c6624c03457b4918467-sideWall.res
+res://textures/tiled.tres::3284b02b3c0021f604280b04d1924b57::1680030207::res://.godot/exported/133200997/export-83b4bf3e866ac3e84a1a85d098088421-tiled.res
+res://textures/wall.tres::fa6c7d3f7b040f6b6843180459ebb2a6::1680030207::res://.godot/exported/133200997/export-93e5592e290fb6d000396bff297f4b72-wall.res

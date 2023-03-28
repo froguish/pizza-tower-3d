@@ -36,7 +36,7 @@ func physics_update(delta: float) -> void:
 
 	if Input.is_action_just_released("superjump"):
 		player.audio.stop()
-		player.audio.stream = load("res://sounds/superjumprelease.wav")
+		player.audio.stream = load("res://sounds/superjumpRelease.wav")
 		player.audio.play()	
 		player.velocity.y = 50 * multiplier
 		state_machine.transition_to("Air", {superJump = true})
