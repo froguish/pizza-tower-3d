@@ -4,7 +4,7 @@ Quick demo I made for a 3D Pizza Tower!
 
 Based off my [YouTube video](https://youtu.be/sH6C811xkGk)
 
-All sound effects and music belong to Tour De Pizza and originate from the original Pizza Tower
+All sound effects and music belong to Tour De Pizza and originate from the original [Pizza Tower](https://store.steampowered.com/app/2231450/Pizza_Tower/)
 
 [3D Peppino](https://skfb.ly/onGNF) by Vladislav Kolesnikov
 
